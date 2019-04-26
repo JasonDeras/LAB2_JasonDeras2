@@ -5,6 +5,7 @@ import java.util.*;
 public class Lab2 {
 
     static Scanner l = new Scanner(System.in);
+    static Random r = new Random();
 
     public static void main(String[] args) {
         String usuario;
@@ -14,6 +15,7 @@ public class Lab2 {
         ArrayList aseadores = new ArrayList();
         ArrayList cajeros = new ArrayList();
         ArrayList seguridad = new ArrayList();
+        ArrayList surcursal = new ArrayList();
         System.out.println("Menu\n");
         System.out.println("1. Registro de Empleados");
         System.out.println("2. Despedir Empleados");
@@ -89,16 +91,20 @@ public class Lab2 {
                                     System.out.println("Ya hay tres Gerentes");
                                 } else {
                                     gerentes.add(new Empleados(nombre, apellido, color, edad, genero, altura, peso, titulo, "Gerente", 50000));
+                                    surcursal.add(gerentes);
                                 }//If auxiliar para los gerentes 
                                 break;
                             case 2:
                                 aseadores.add(new Empleados(nombre, apellido, color, edad, genero, altura, peso, titulo, "Aseador", 30000));
+                                surcursal.add(aseadores);
                                 break;
                             case 3:
                                 cajeros.add(new Empleados(nombre, apellido, color, edad, genero, altura, peso, titulo, "Cajero", 40000));
+                                surcursal.add(cajeros);
                                 break;
                             case 4:
                                 seguridad.add(new Empleados(nombre, apellido, color, edad, genero, altura, peso, titulo, "Seguridad", 38000));
+                                surcursal.add(seguridad);
                                 break;
                             default:
                                 System.out.println("Opcion de cargo no valida\n");
@@ -545,6 +551,25 @@ public class Lab2 {
                         System.out.println("");
                         break;
                     case 6:
+                        System.out.print("Ingrese un numero: ");
+                        int n = l.nextInt();
+                        while (n > 0) {
+                            Collections.shuffle(surcursal);
+                            if (((Empleados) surcursal.get(n)).getCargo().equalsIgnoreCase("cajero") && gerentes.size() < 3) {
+                                ((Empleados) cajeros.get((int) surcursal.get(n))).setCargo("Gerente");
+                                cajeros.remove((int) surcursal.get(n));
+                                gerentes.add(cajeros.get((int) surcursal.get(n)));
+                            } else if (((Empleados) surcursal.get(n)).getCargo().equalsIgnoreCase("aseador")) {
+                                ((Empleados) aseadores.get((int) surcursal.get(n))).setCargo("Seguridad");
+                                aseadores.remove((int) surcursal.get(n));
+                                seguridad.add(cajeros.get((int) surcursal.get(n)));
+                            } else if (((Empleados) surcursal.get(n)).getCargo().equalsIgnoreCase("Seguridad")) {
+                                ((Empleados) seguridad.get((int) surcursal.get(n))).setCargo("Aseador");
+                                seguridad.remove((int) surcursal.get(n));
+                                aseadores.add(cajeros.get((int) surcursal.get(n)));
+                            }
+                            n--;
+                        }//Fin del while del usuario
                         break;
                     case 7:
                         System.exit(0);
@@ -1073,6 +1098,25 @@ public class Lab2 {
                         System.out.println("");
                         break;
                     case 6:
+                        System.out.print("Ingrese un numero: ");
+                        int n = l.nextInt();
+                        while (n > 0) {
+                            Collections.shuffle(surcursal);
+                            if (((Empleados) surcursal.get(n)).getCargo().equalsIgnoreCase("cajero") && gerentes.size() < 3) {
+                                ((Empleados) cajeros.get((int) surcursal.get(n))).setCargo("Gerente");
+                                cajeros.remove((int) surcursal.get(n));
+                                gerentes.add(cajeros.get((int) surcursal.get(n)));
+                            } else if (((Empleados) surcursal.get(n)).getCargo().equalsIgnoreCase("aseador")) {
+                                ((Empleados) aseadores.get((int) surcursal.get(n))).setCargo("Seguridad");
+                                aseadores.remove((int) surcursal.get(n));
+                                seguridad.add(cajeros.get((int) surcursal.get(n)));
+                            } else if (((Empleados) surcursal.get(n)).getCargo().equalsIgnoreCase("Seguridad")) {
+                                ((Empleados) seguridad.get((int) surcursal.get(n))).setCargo("Aseador");
+                                seguridad.remove((int) surcursal.get(n));
+                                aseadores.add(cajeros.get((int) surcursal.get(n)));
+                            }
+                            n--;
+                        }//Fin del while del usuario
                         break;
                     case 7:
                         System.exit(0);
