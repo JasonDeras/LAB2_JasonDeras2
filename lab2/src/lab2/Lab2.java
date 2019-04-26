@@ -177,8 +177,36 @@ public class Lab2 {
                         System.out.println("");
                         break;
                     case 4:
+                        System.out.println("Lista de los Gerentes\n");
+                        for (int i = 0; i < gerentes.size(); i++) {
+                            System.out.println(gerentes.get(i));
+                        }
+                        System.out.println("");
+                        System.out.println("");
+                        System.out.println("Lista de los Aseadores\n");
+                        for (int i = 0; i < aseadores.size(); i++) {
+                            System.out.println(aseadores.get(i));
+                        }
+                        System.out.println("");
+                        System.out.println("");
+                        System.out.println("Lista de los Cajeros\n");
+                        for (int i = 0; i < cajeros.size(); i++) {
+                            System.out.println(cajeros.get(i));
+                        }
+                        System.out.println("");
+                        System.out.println("");
+                        System.out.println("Lista de Seguridad\n");
+                        for (int i = 0; i < seguridad.size(); i++) {
+                            System.out.println(seguridad.get(i));
+                        }
+                        System.out.println("");
+                        System.out.println("");
+                        System.out.println("");
                         break;
                     case 5:
+                        System.out.println("");
+                        System.out.println("");
+                        System.out.println("");
                         break;
                     case 6:
                         break;
