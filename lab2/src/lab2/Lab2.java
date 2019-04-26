@@ -108,6 +108,54 @@ public class Lab2 {
                         System.out.println("");
                         break;
                     case 2:
+                        System.out.print("Menu para despedir empleados\n");
+                        System.out.println("1. Eliminar Gerente");
+                        System.out.println("2. Eliminar Aseador");
+                        System.out.println("3. Eliminnar Cajero");
+                        System.out.println("4. Eliminar Seguridad");
+                        System.out.print("Ingrese una opciona eliminar: ");
+                        int op5 = l.nextInt();
+                        switch (op5) {
+                            case 1:
+                                System.out.print("Ingrese la posicion: ");
+                                int pos = l.nextInt();
+                                System.out.println("");
+                                if (pos >= 0 && pos < gerentes.size()) {
+                                    gerentes.remove(pos);
+                                    gerentes.add(cajeros.get(pos));
+                                } else {
+                                    System.out.println("Posicion invalidan");
+                                }
+                                System.out.println("");
+                                break;
+                            case 2:
+                                System.out.print("Ingrese posicion a eliminar: ");
+                                pos = l.nextInt();
+                                if (pos >= 0 && pos < aseadores.size()) {
+                                    aseadores.remove(pos);
+                                }
+                                System.out.println("");
+                                break;
+                            case 3:
+                                System.out.print("Ingrese posicion a eliminar: ");
+                                pos = l.nextInt();
+                                if (pos >= 0 && pos < cajeros.size()) {
+                                    aseadores.remove(pos);
+                                }
+                                System.out.println("");
+                                break;
+                            case 4:
+                                System.out.print("Ingrese posicion a eliminar: ");
+                                pos = l.nextInt();
+                                if (pos >= 0 && pos < seguridad.size()) {
+                                    aseadores.remove(pos);
+                                }
+                                System.out.println("");
+                                break;
+                        }//Fin del case de eliminacion de empleados
+                        System.out.println("");
+                        System.out.println("");
+                        System.out.println("");
                         break;
                     case 3:
                         break;
