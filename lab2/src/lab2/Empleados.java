@@ -108,7 +108,7 @@ public class Empleados {
 
     @Override
     public String toString() {
-        return "Empleados{" + "nombre=" + nombre + ", apellido=" + apellido + ", color=" + color + ", edad=" + edad + ", genero=" + genero + ", altura=" + altura + ", peso=" + peso + ", titulo=" + titulo + ", cargo=" + cargo + ", sueldo=" + sueldo + '}';
+        return "Empleados{" + "nombre=" + nombre + ", apellido=" + apellido + ", cargo=" + cargo + '}';
     }
 
 }
