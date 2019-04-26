@@ -7,8 +7,12 @@ public class Lab2 {
     static Scanner l = new Scanner(System.in);
 
     public static void main(String[] args) {
-        String usuario = "";
-        String contra = "";
+        String usuario;
+        String contra;
+        ArrayList gerentes = new ArrayList();
+        ArrayList aseadores = new ArrayList();
+        ArrayList cajeros = new ArrayList();
+        ArrayList seguridad = new ArrayList();
         System.out.println("Menu\n");
         System.out.println("1. Registro de Empleados");
         System.out.println("2. Despedir Empleados");
