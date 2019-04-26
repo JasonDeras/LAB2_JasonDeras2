@@ -8,6 +8,7 @@ public class Lab2 {
 
     public static void main(String[] args) {
         String usuario;
+        String genero = "";
         String contra;
         ArrayList gerentes = new ArrayList();
         ArrayList aseadores = new ArrayList();
@@ -44,6 +45,67 @@ public class Lab2 {
                 System.out.println("");
                 switch (op2) {
                     case 1:
+                        System.out.print("Ingrese nombre: ");
+                        String nombre = l.next();
+                        System.out.print("Ingrese apellido: ");
+                        String apellido = l.next();
+                        System.out.print("Ingrese color favorito: ");
+                        String color = l.next();
+                        System.out.print("Ingrese edad: ");
+                        int edad = l.nextInt();
+                        System.out.println("");
+                        System.out.println("Menu de generos\n");
+                        System.out.println("1. Masculino");
+                        System.out.println("2. Femenino\n");
+                        System.out.print("Ingrese una opcion de genero: ");
+                        int op3 = l.nextInt();
+                        while (op3 != 1 && op3 != 2) {
+                            System.out.println("Genero no valido");
+                            System.out.print("Ingrese una opcion de genero: ");
+                            op3 = l.nextInt();
+                            if (op3 == 1) {
+                                genero = "Masculino";
+                            } else if (op == 2) {
+                                genero = "Femenino";
+                            }//If auxiliar de los generos
+                        }//Fin del while de los generos
+                        System.out.print("Ingrese Altura: ");
+                        double altura = l.nextDouble();
+                        System.out.print("Ingrese peso: ");
+                        double peso = l.nextDouble();
+                        System.out.print("Ingrese titulo: ");
+                        String titulo = l.next();
+                        System.out.println("");
+                        System.out.println("Menu de cargos\n");
+                        System.out.println("1. Gerente");
+                        System.out.println("2. Aseadores");
+                        System.out.println("3. Cajeros");
+                        System.out.println("4. Seguridad\n");
+                        System.out.print("Ingrese una opcion de cargo: ");
+                        int op4 = l.nextInt();
+                        switch (op4) {
+                            case 1:
+                                if (gerentes.size() == 3) {
+                                    System.out.println("Ya hay tres Gerentes");
+                                } else {
+                                    gerentes.add(new Empleados(nombre, apellido, color, edad, genero, altura, peso, titulo, "Gerente", 50000));
+                                }//If auxiliar para los gerentes 
+                                break;
+                            case 2:
+                                aseadores.add(new Empleados(nombre, apellido, color, edad, genero, altura, peso, titulo, "Aseador", 30000));
+                                break;
+                            case 3:
+                                cajeros.add(new Empleados(nombre, apellido, color, edad, genero, altura, peso, titulo, "Cajero", 40000));
+                                break;
+                            case 4:
+                                seguridad.add(new Empleados(nombre, apellido, color, edad, genero, altura, peso, titulo, "Seguridad", 38000));
+                                break;
+                            default:
+                                System.out.println("Opcion de cargo no valida\n");
+                        }//Fin del case de los cargos
+                        System.out.println("");
+                        System.out.println("");
+                        System.out.println("");
                         break;
                     case 2:
                         break;
