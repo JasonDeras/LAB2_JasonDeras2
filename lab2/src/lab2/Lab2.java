@@ -122,7 +122,11 @@ public class Lab2 {
                                 System.out.println("");
                                 if (pos >= 0 && pos < gerentes.size()) {
                                     gerentes.remove(pos);
+                                    ((Empleados) cajeros.get(pos)).setCargo("Gerente");
+                                    ((Empleados) cajeros.get(pos)).setSueldo(50000);
                                     gerentes.add(cajeros.get(pos));
+                                    gerentes.add(cajeros.get(pos));
+                                    cajeros.remove(pos);
                                 } else {
                                     System.out.println("Posicion invalidan");
                                 }
@@ -158,6 +162,19 @@ public class Lab2 {
                         System.out.println("");
                         break;
                     case 3:
+                        if (gerentes.size() == 3) {
+                            System.out.println("Ya hay tres Gerentes\n");
+                        } else {
+                            System.out.print("Ingrese posicion del cajero a ascender: ");
+                            int pos = l.nextInt();
+                            ((Empleados) cajeros.get(pos)).setCargo("Gerente");
+                            ((Empleados) cajeros.get(pos)).setSueldo(50000);
+                            gerentes.add(cajeros.get(pos));
+                            cajeros.remove(pos);
+                        }//Fin del if auxiliar de la lista de gerentes
+                        System.out.println("");
+                        System.out.println("");
+                        System.out.println("");
                         break;
                     case 4:
                         break;
